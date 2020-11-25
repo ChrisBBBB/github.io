@@ -1,0 +1,121 @@
+<html>
+
+<!-- Javascript Advent Calendar  - (C) 2006 Sean McManus. www.sean.co.uk -->
+
+<head>
+<style>
+
+body
+{
+/* ###############################################
+/* change the image name in the line below to your background image
+/* ############################################### */
+background-image:url(shelf.png);
+background-repeat: no-repeat;
+}
+
+
+.button
+{
+color:#00ff66; /* text colour on your door */
+width:60px;
+text-align:center;
+margin:5px;
+font-family:sans-serif;
+font-size:large;
+padding:5pt; 
+border-width: 3pt; border-style:outset;
+text-decoration:none;
+}
+
+.button:hover
+{
+background:#ff0000; /* text colour on your door when moused over */
+color:#00ff00; /* background colour on your door when moused over */
+width:60px;
+text-align:center;
+margin:5px;
+font-family:sans-serif;
+font-size:large;
+padding:5pt; 
+border-width: 3pt; border-style:outset;
+text-decoration:none;
+}
+</style></head>
+
+<body>
+
+<script>
+
+function dooropen(door)
+{
+
+today=new Date();
+daynow=today.getDate();
+monthnow=today.getMonth();
+
+// ###############################################
+// I've de-activated the date controls for testing purposes
+// Before launching, you should remove the // from the start of the next three lines that start with 'if'
+// That will ensure that people can't use the calendar before December or after January
+// And that they can't open doors early
+// ###############################################
+ 
+// if (monthnow!=11 && monthnow!=0) {alert("This feature opens in December. Please come back then."); return false;}
+// if (daynow==door-1) {alert("Come back tomorrow to see what's behind that door!");return false;}
+// if (door>daynow) {alert("You\'ll have to wait "+(door-daynow)+" days before that door's available!"); return false;}
+
+// you don't need to edit this bit 
+oNewWindow=window.open(urlsarray[door], '_blank','directories=no,height='+heightarray[door]+',width='+widtharray[door]+',location=0,menubar=0,resizable=yes,scrollbars='+scrollbarsarray[door]+',status=no,titlebar=0,toolbar=0');
+}
+
+urlsarray = new Array();
+widtharray = new Array();
+heightarray = new Array();
+scrollbarsarray= new Array();
+
+// ###############################################
+// edit variables here
+// ###############################################
+
+var x=50; // offset from left where doors begin in px
+var y=50; // offset from top where doors begin in px
+var rows=4; // number of rows of doors
+var cols=6; // number of columns of doors
+var spacinghoriz=100; // spacing between doors horizontal in px
+var spacingvert=100; // spacing between doors vertical in px
+
+
+// ###############################################
+// put your URLs, width and height in here. the scrollbarsarray[] is optional and should be set to 1 to enable scrollbars
+// ###############################################
+
+urlsarray[1]="www.erammp.wales/1"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[2]="www.erammp.wales/2"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[3]="www.erammp.wales/3"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[4]="www.erammp.wales/4"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[5]="www.erammp.wales/5"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[6]="www.erammp.wales/6"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[7]="www.erammp.wales/7"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[8]="www.erammp.wales/8"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[9]="www.erammp.wales/9"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[10]="www.erammp.wales/10"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[11]="www.erammp.wales/11"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[12]="www.erammp.wales/12"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[13]="www.erammp.wales/13"; widtharray[1]="80%"; heightarray[1]="80%";
+urlsarray[14]="www.erammp.wales/14"; widtharray[1]="80%"; heightarray[1]="80%"; scrollbarsarray[4]=1;
+urlsarray[15]="www.erammp.wales/15"; widtharray[1]="80%"; heightarray[1]="80%"; scrollbarsarray[4]=1;
+urlsarray[16]="4.htm"; widtharray[4]="200"; heightarray[4]="150"; scrollbarsarray[4]=1;
+
+urlsarray[24]="24.htm"; widtharray[24]="520"; heightarray[24]="550";
+
+
+// you don't need anything below this line
+var doorno=1;
+for (h=0;h<rows;++h)
+{
+for(g=0; g<cols; ++g, ++doorno)
+{
+document.write('<a class="button" onClick="dooropen('+doorno+');" href="#" style="position: absolute; left:'+(x+(g*spacinghoriz))+'px; top:'+(y+(h*spacingvert))+'px;">'+doorno+'</a>');}
+}
+</script></body>
