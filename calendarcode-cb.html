@@ -10,7 +10,7 @@ body
 /* ###############################################
 /* change the image name in the line below to your background image
 /* ############################################### */
-background-image:url(shelf.PNG);
+background-image:url(background.png);
 background-repeat: no-repeat;
 }
 
@@ -61,9 +61,11 @@ monthnow=today.getMonth();
 // And that they can't open doors early
 // ###############################################
  
-// if (monthnow!=11 && monthnow!=0) {alert("This feature opens in December. Please come back then."); return false;}
-// if (daynow==door-1) {alert("Come back tomorrow to see what's behind that door!");return false;}
-// if (door>daynow) {alert("You\'ll have to wait "+(door-daynow)+" days before that door's available!"); return false;}
+uncommented these 3 next lines- chris
+
+if (monthnow!=11 && monthnow!=0) {alert("This feature opens in December. Please come back then."); return false;}
+if (daynow==door-1) {alert("Come back tomorrow to see what's behind that door!");return false;}
+if (door>daynow) {alert("You\'ll have to wait "+(door-daynow)+" days before that door's available!"); return false;}
 
 // you don't need to edit this bit -- ORIGINAL was - cb
 //oNewWindow=window.open(urlsarray[door], '_blank','directories=no,height='+heightarray[door]+',width='+widtharray[door]+',location=0,menubar=0,resizable=yes,scrollbars='+scrollbarsarray[door]+',status=no,titlebar=0,toolbar=0');
